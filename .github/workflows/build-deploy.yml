@@ -39,6 +39,6 @@ jobs:
       with:
         app-name: sample-197978
         publish-profile: ${{ secrets.PUBLISHPROFILE }}
-        package: artifact.zip
-    
+        package: artifact
+  
     
