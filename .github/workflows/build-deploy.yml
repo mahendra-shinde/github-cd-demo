@@ -17,8 +17,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.1.x
-    - name: switch to project directory
-      run: cd app1/
+  - name: switch to project directory
+      run: cd app1 && echo $PWD
     - name: Restore dependencies
       run: dotnet restore 
     - name: Build
