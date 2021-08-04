@@ -28,3 +28,16 @@ jobs:
     - uses: actions/upload-artifact@v2.2.4
       with:
         path: app1/publish/
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@v2.0.10
+    - uses: azure/webapps-deploy@v2
+      name: Deploying to Azure
+      with:
+        app-name: sample-197978
+        publish-profile: ${{ secrets.PUBLISHPROFILE }}
+        package: artifact.zip
+    
+    
