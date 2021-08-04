@@ -30,6 +30,7 @@ jobs:
         path: app1/publish/
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/download-artifact@v2.0.10
