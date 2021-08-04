@@ -21,4 +21,10 @@ jobs:
       run: dotnet restore ./app1
     - name: Build
       run: dotnet build --no-restore ./app1
-  
+
+    - name: Publish
+      run: dotnet publish ./app1 -o publish/
+
+    - uses: actions/upload-artifact@v2.2.4
+      with:
+        path: publish/
